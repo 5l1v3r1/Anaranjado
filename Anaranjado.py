@@ -132,7 +132,7 @@ def FindSinglePages(line):
 'dll','txt','bkp','sql','cfg','doc','docx','xls','xlsx','pdf','csv','swf','wsdl']
 	for ext in extensions:
 		if HasExt(line,ext):
-			reg = r"(?:[\/|\w|\/|\.|\-|\\|\$])+\."+ext+".+?(?=\(|\-|\"|\'|\<|\>|\/|\s)"
+			reg = r"(?:[\/|\w|\/|\.|\-|\\|\$])+\."+ext+".*?(?=\(|\-|\"|\'|\<|\>|\/|\;|\s)"
 			re.compile(reg)
 			matches = re.findall(reg, line)
 			if matches:
